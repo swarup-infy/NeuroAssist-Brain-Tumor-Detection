@@ -10,7 +10,7 @@ NeuroAssist is a Flask-based clinical decision support prototype for brain tumor
 - `get_labels.py`: exports annotated PNG slices and a summary montage from predicted masks
 - `Input_preprocessing/`: standalone NIfTI<->DICOM conversion utilities
 - `Tumor Model/`: trained model weights used by the segmentation pipeline
-- - `utils/` and `gioblastoma.ipynb`: notebook-era experimentation helpers and research code
+- `utils/` and `gioblastoma.ipynb`: notebook-era experimentation helpers and research code
 
 ## End-To-End Flow
 
@@ -110,8 +110,8 @@ DATABASE_URL=postgresql://USER:PASSWORD@localhost:5432/neuroassist
 Important notes:
 
 - Replace `USER` and `PASSWORD` with credentials configured in your local PostgreSQL instance. Keep real credentials in the ignored root `.env` file, never in source control.
-- the README example assumes PostgreSQL is listening on port `5433`
-- if your local PostgreSQL uses the default port `5432`, update `DATABASE_URL` in `.env`
+- the example connection string uses PostgreSQL port `5432`
+- if your local PostgreSQL uses a different port, update `DATABASE_URL` in `.env`
 - the app can work with plain PostgreSQL even if `pgvector` is not installed
 
 ### 1. Make sure PostgreSQL is running
@@ -245,5 +245,17 @@ Current tests cover:
 - Large data folders, model weights, uploads, and generated static assets are intentionally ignored by git.
 - The preprocessing scripts in `Input_preprocessing/` are utility scripts and are not part of the Flask request path except for DICOM-to-NIfTI conversion.
 
-## Attribution
-This repository is based on the original NeuroAssist project by Raj Patel. Original project: https://github.com/R204570/BrainTumor. Preserve the original project's license and attribution requirements.
+## Author & Maintainer
+
+**Swarup Kar Chaudhuri**  
+B.Tech, Electrical Engineering — North Eastern Regional Institute of Science and Technology (NERIST)  
+Based in Tripura, India
+
+- GitHub: https://github.com/swarup-infy
+- LinkedIn: https://www.linkedin.com/in/swarup-kar-chaudhuri-4266a7260
+- LeetCode: https://leetcode.com/u/swarup_infy/
+- Email: officially.swarup@gmail.com
+
+## Project Attribution
+
+This repository is maintained by Swarup Kar Chaudhuri and is based on the upstream NeuroAssist project: https://github.com/R204570/BrainTumor. Original author and license notices are retained where required by the upstream project's license.
